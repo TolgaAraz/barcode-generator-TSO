@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Barcode Generator</title>
+  <title>Barcode Generator TSO</title>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
     body { font-family: Arial; padding: 20px; }
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <h2>📦 Barcode Generator (Max 20)</h2>
+  <h2>📦 Barcode Generator TSO</h2>
 
   <p>Füge deine Paletten IDs ein (jede in eine neue Zeile):</p>
   <textarea id="inputData">PALLET_5EesyuU_Z
@@ -38,8 +38,8 @@ PALLET_ShPBNxn_Z</textarea>
         .map(l => l.trim())
         .filter(l => l !== "");
 
-      if (lines.length > 20) {
-        alert("Maximal 20 Barcodes erlaubt!");
+      if (lines.length > 50) {
+        alert("Maximal 50 Barcodes erlaubt!");
         return;
       }
 
@@ -60,7 +60,6 @@ PALLET_ShPBNxn_Z</textarea>
       });
     }
 
-    // Auto generate on load
     generateBarcodes();
   </script>
 
